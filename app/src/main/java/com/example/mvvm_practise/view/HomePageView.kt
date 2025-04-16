@@ -27,10 +27,10 @@ fun HomePageView(modifier: Modifier, viewModel: UserViewModel){
         if(isLoading.value == true){
            CircularProgressIndicator()
         }else{
-            userData.value?.name.let {
+            userData.value?.get(0)?.name.let{
                 Text(text = "Name : $it")
             }
-            userData.value?.age.let {
+            userData.value?.get(0)?.age.let {
                 Text(text = "Age : $it")
             }
         }
